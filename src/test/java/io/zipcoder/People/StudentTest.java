@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.People;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.People;
 
 public interface Teacher {
 
