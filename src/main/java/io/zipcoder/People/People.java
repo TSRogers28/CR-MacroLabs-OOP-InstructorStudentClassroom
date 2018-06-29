@@ -23,6 +23,7 @@ public class People {
        return this.personList.size();
     }
 
+
     public Person removeByPerson(Person target) {
         Person foundPerson = null;
         for(Person person: personList)
@@ -49,8 +50,8 @@ public class People {
         return foundPerson;
     }
 
-    public Object [] getArray() {
-       return personList.toArray();
+    public Person [] getArray() {
+       return this.personList.toArray(new Person [personList.size()]);
     }
 
     public void removeAll() {

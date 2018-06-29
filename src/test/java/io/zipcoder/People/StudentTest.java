@@ -23,6 +23,7 @@ public class StudentTest {
     public void testInheritance(){
 
         assertTrue(student instanceof Person);
+
     }
 
     @Test

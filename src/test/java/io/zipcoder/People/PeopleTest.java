@@ -84,8 +84,8 @@ public class PeopleTest {
         personList.add(instructor);
         personList.add(student2);
         personList.add(student3);
-        Object [] expected = {instructor, student2, student3};
-        Object [] actual = personList.getArray();
+        Person [] expected = {instructor, student2, student3};
+        Person [] actual = personList.getArray();
 
         assertEquals(expected, actual);
     }
