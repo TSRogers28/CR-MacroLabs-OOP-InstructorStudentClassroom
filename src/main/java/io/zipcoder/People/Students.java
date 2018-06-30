@@ -5,10 +5,8 @@ import java.util.ArrayList;
 public final class Students extends People <Student>{
 
     private static Students students = new Students();
-    private ArrayList<Person> studentList;
 
     private Students(){
-        studentList = new ArrayList<Person>();
         for(int x = 0; x < 38; x++){
             super.add(new Student(x +1));
         }
@@ -20,8 +18,8 @@ public final class Students extends People <Student>{
         return students;
     }
 
-    @Override
-    public Student [] getArray() {
-        return this.studentList.toArray(new Student [studentList.size()]);
-    }
+//    @Override
+//    public Student [] getArray() {
+//        return this.studentList.toArray(new Student [studentList.size()]);
+//    }
 }

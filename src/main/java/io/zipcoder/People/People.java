@@ -1,28 +1,11 @@
 package io.zipcoder.People;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public abstract class  People <T> {
 
-//    interface PersonListGenerator<T> {
-//        public ArrayList<T> getInstance();
-//    }
-
     private ArrayList<T> personList;
-
-//    public class ListMarker extends People {
-//        public ArrayList<T> getInstance() {
-//            if (personList == null)
-//        personList = new ArrayList<>();
-//            return personList;
-//    }
-
-//        @Override
-//        public Object[] getArray() {
-//            Object [] array = getInstance().toArray();
-//            return array;
-//        }
-//    }
 
     public People() {
         personList = new ArrayList<>();
@@ -77,7 +60,13 @@ public abstract class  People <T> {
         return foundPerson;
     }
 
-    public abstract T [] getArray();
+    public T [] getArray(){
+        T[] array =  (T[]) Array.newInstance( Person[].class.getComponentType(), personList.size());
+        for (int y = 0; y < array.length; y++) {
+            array[y] = personList.get(y);
+        }
+        return array;
+    }
 
     public void removeAll() {
         personList.clear();

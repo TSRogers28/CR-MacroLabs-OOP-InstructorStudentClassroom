@@ -28,7 +28,6 @@ public class StudentsTest {
     public void testInitializationSetupStudents(){
         Students instance = Students.getInstance();
         Person [] testArray = instance.getArray();
-        System.out.println(instance.getArray().length);
         int expected = 38;
         int actual = testArray.length;
 
@@ -41,11 +40,8 @@ public class StudentsTest {
     public void testInitializationSetupStudentsID(){
         Students instance = Students.getInstance();
         Person [] testArray = instance.getArray();
-        int [] checkID = new int[testArray.length];
         int actual = 0;
-        int x = 0;
         for(Person student: testArray){
-            checkID[x] = (int) student.getId();
             actual += (int) student.getId();
         }
 

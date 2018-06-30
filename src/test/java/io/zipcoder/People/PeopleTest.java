@@ -27,10 +27,11 @@ public class PeopleTest {
     @Test
     public void testSize() {
         personList.add(instructor);
+        final int expected = 39;
         int actual = personList.getCount();
-        int expected = 39;
 
-        assertEquals(actual, expected);
+
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -63,7 +64,7 @@ public class PeopleTest {
     public void testGetArray() {
         Object [] expected = new Object[personList.getArray().length];
         for(int x = 0; x < expected.length; x++){
-            expected[x] = new Student(x);
+            expected[x] = personList.get(x);
         }
         Object [] actual = personList.getArray();
 

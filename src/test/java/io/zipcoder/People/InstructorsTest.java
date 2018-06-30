@@ -40,11 +40,8 @@ public class InstructorsTest {
     public void testInitializationSetupStudentsID() {
         Instructors instance = Instructors.getInstance();
         Person[] testArray = instance.getArray();
-        int[] checkID = new int[testArray.length];
         int actual = 0;
-        int x = 0;
         for (Person student : testArray) {
-            checkID[x] = (int) student.getId();
             actual += (int) student.getId();
         }
 
