@@ -19,14 +19,12 @@ public class ZipCodeWilmingtonTest {
 
     @Test
     public void testHostLecture() {
-        double expected = 0;
         double numOfHours = 10;
 
         zipCodeWilmington.hostLecture(10, numOfHours);
-        Student [] students = (Student[]) Students.getInstance().getArray();
-
+        Student [] students = Students.getInstance().getArray();
         //for(Student student:  Students.getInstance().getArray())
-        expected =  students[0].getTotalStudyTime();
+        double expected =  students[0].getTotalStudyTime();
         double actual = numOfHours/Students.getInstance().getArray().length;
 
         Assert.assertEquals(expected, actual, 0);

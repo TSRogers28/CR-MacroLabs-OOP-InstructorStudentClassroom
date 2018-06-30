@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public abstract class  People <T> {
 
-    private ArrayList<T> personList;
+    protected ArrayList<T> personList;
 
     public People() {
         personList = new ArrayList<>();
@@ -60,13 +60,14 @@ public abstract class  People <T> {
         return foundPerson;
     }
 
-    public T [] getArray(){
-        T[] array =  (T[]) Array.newInstance( Person[].class.getComponentType(), personList.size());
-        for (int y = 0; y < array.length; y++) {
-            array[y] = personList.get(y);
-        }
-        return array;
-    }
+    public abstract T [] getArray();
+//        Class<?> type = personList.getClass().getComponentType();
+//        T[] array =  (T[]) Array.newInstance( type, personList.size());
+//        for (int y = 0; y < array.length; y++) {
+//            array[y] = personList.get(y);
+//        }
+//        return array;
+//    }
 
     public void removeAll() {
         personList.clear();

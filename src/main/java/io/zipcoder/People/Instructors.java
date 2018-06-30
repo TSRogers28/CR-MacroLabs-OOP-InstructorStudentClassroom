@@ -5,10 +5,8 @@ import java.util.ArrayList;
 public final class Instructors extends People <Instructor> {
 
     private static Instructors instructors = new Instructors();
-    private ArrayList<Instructor> instructorList;
 
     private Instructors(){
-        instructorList = new ArrayList<>();
         for(int x = 0; x < 38; x++){
             super.add(new Instructor(x +1));
         }
@@ -17,12 +15,15 @@ public final class Instructors extends People <Instructor> {
     public static Instructors getInstance(){
         if(instructors == null)
             instructors = new Instructors();
-        System.out.println(instructors.instructorList.size());
         return instructors;
     }
 
-//    @Override
-//    public Instructor [] getArray() {
-//        return this.instructorList.toArray(new Instructor [instructorList.size()]);
-//    }
+    public Instructor [] getArray(){
+        Instructor[] array = personList.toArray(new Instructor[0]);
+        for (int y = 0; y < array.length; y++) {
+            array[y] = personList.get(y);
+        }
+        return array;
+    }
+
 }
