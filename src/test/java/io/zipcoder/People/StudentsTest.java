@@ -28,6 +28,7 @@ public class StudentsTest {
     public void testInitializationSetupStudents(){
         Students instance = Students.getInstance();
         Person [] testArray = instance.getArray();
+        System.out.println(instance.getArray().length);
         int expected = 38;
         int actual = testArray.length;
 

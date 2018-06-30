@@ -27,7 +27,7 @@ public class InstructorsTest {
     @Test
     public void testInitializationSetupStudents() {
         Instructors instance = Instructors.getInstance();
-        Person[] testArray = instance.getArray();
+        Person [] testArray = instance.getArray();
         int expected = 38;
         int actual = testArray.length;
 

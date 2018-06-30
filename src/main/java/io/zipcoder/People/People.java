@@ -1,21 +1,39 @@
 package io.zipcoder.People;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-public class People {
+public abstract class  People <T> {
 
-    private ArrayList<Person> personList;
+//    interface PersonListGenerator<T> {
+//        public ArrayList<T> getInstance();
+//    }
 
-    public People(){
-        personList = new ArrayList<Person>();
+    private ArrayList<T> personList;
+
+//    public class ListMarker extends People {
+//        public ArrayList<T> getInstance() {
+//            if (personList == null)
+//        personList = new ArrayList<>();
+//            return personList;
+//    }
+
+//        @Override
+//        public Object[] getArray() {
+//            Object [] array = getInstance().toArray();
+//            return array;
+//        }
+//    }
+
+    public People() {
+        personList = new ArrayList<>();
     }
 
-    public void add(Person person) {
-        personList.add(person);
+
+    public void add(T t) {
+        personList.add(t);
     }
 
-    public Person get(int i) {
+    public T get(int i) {
        return personList.get(i);
     }
 
@@ -24,35 +42,42 @@ public class People {
     }
 
 
-    public Person removeByPerson(Person target) {
-        Person foundPerson = null;
-        for(Person person: personList)
-           if(person.equals(target))
+    public T removeByPerson(T target) {
+        T foundPerson = null;
+        for(T person: personList)
+           if(person.equals(target)) {
                foundPerson = person;
+           }
         personList.remove(target);
         return foundPerson;
     }
 
-    public Person removeById(int id) {
-        Person foundPerson = null;
-        for(Person person: personList)
-            if(id == person.getId())
+    public T removeById(int id) {
+        T foundPerson = null;
+        Person cPerson = null;
+        for(T person: personList) {
+            if (person instanceof Person)
+                cPerson = (Person) person;
+            if (id == cPerson.getId())
                 foundPerson = person;
+        }
         personList.remove(foundPerson);
         return foundPerson;
     }
 
-    public Person findById(int id) {
-        Person foundPerson = null;
-        for(Person person: personList)
-            if(id == person.getId())
+    public T findById(int id) {
+        T foundPerson = null;
+        Person cPerson = null;
+        for(T person: personList){
+            if (person instanceof Person)
+                cPerson = (Person) person;
+            if(id == cPerson.getId())
                 foundPerson = person;
+        }
         return foundPerson;
     }
 
-    public Person [] getArray() {
-       return this.personList.toArray(new Person [personList.size()]);
-    }
+    public abstract T [] getArray();
 
     public void removeAll() {
         personList.clear();

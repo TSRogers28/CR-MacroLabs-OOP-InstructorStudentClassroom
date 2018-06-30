@@ -2,7 +2,7 @@ package io.zipcoder.People;
 
 import java.util.ArrayList;
 
-public final class Students extends People{
+public final class Students extends People <Student>{
 
     private static Students students = new Students();
     private ArrayList<Person> studentList;
@@ -18,5 +18,10 @@ public final class Students extends People{
         if(students == null)
             students = new Students();
         return students;
+    }
+
+    @Override
+    public Student [] getArray() {
+        return this.studentList.toArray(new Student [studentList.size()]);
     }
 }
